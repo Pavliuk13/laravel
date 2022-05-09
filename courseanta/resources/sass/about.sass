@@ -1,0 +1,193 @@
+@import './variables'
+@import './mixins'
+
+*
+    padding: 0
+    margin: 0
+
+html, body
+    height: 100%
+
+body.lock
+    @media (max-width: 768px)
+        overflow: hidden
+
+.container-d
+    @include container()
+
+body
+    font-size: 1em
+    min-width: 320px
+    position: relative
+    line-height: 1.5
+    font-family: 'Inter', sans-serif
+    overflow-x: hidden
+    opacity: 1
+    background-color: $mainColor
+
+a
+    text-decoration: none
+
+li
+    list-style: none
+
+header
+    @include header-styles()
+
+
+
+footer
+    @include footer-styles()
+
+.line
+    width: 100%
+    height: 3px
+    margin-top: 20px
+    margin-bottom: 20px
+    background-color: $textColor
+
+.container-d
+    h1
+        font-size: 64px
+        color: $secondColor
+        text-align: center
+        @media (max-width: 1110px)
+            font-size: 48px
+        @media (max-width: 838px)
+            font-size: 32px
+            margin-top: 10px
+        @media (max-width: 507px)
+            font-size: 24px
+        @media (max-width: 385px)
+            font-size: 20px
+    .thesis
+        display: flex
+        justify-content: space-between
+        @media (max-width: 650px)
+            display: grid
+            justify-content: center
+
+        .text
+            text-align: right
+            color: $textColor
+            font-weight: bold
+            width: 45%
+            @media (max-width: 930px)
+                width: 50%
+                font-size: 14px
+            @media (max-width: 807px)
+                font-size: 12px
+            @media (max-width: 650px)
+                width: 90%
+                text-align: center
+                padding-right: 20px
+                padding-left: 20px
+            span
+                padding-top: 40px
+        .image
+            width: 40%
+            img
+                @media (max-width: 807px)
+                    width: 270px
+                @media (max-width: 724px)
+                    width: 250px
+                @media (max-width: 650px)
+                    width: 200px
+                @media (max-width: 440px)
+                    width: 150px
+            @media (max-width: 724px)
+                width: 30%
+            @media (max-width: 650px)
+                width: 100%
+                text-align: center
+
+        .sign
+            text-align: right
+            width: 15%
+            margin-right: 20px
+            @media (max-width: 724px)
+                margin-right: 0px
+            @media (max-width: 650px)
+                width: 100%
+                text-align: left
+                margin-left: 20px
+                margin-bottom: 5px
+
+            img
+                @media (max-width: 930px)
+                    width: 40px
+                @media (max-width: 650px)
+                    width: 30px
+        .sign-second
+            position: absolute
+            visibility: hidden
+            @media (max-width: 650px)
+                visibility: visible
+                position: relative
+                text-align: right
+                margin-right: 20px
+                margin-top: 10px
+                img
+                    transform: rotate(180deg)
+                    @media (max-width: 930px)
+                        width: 40px
+                    @media (max-width: 650px)
+                        width: 30px
+
+    .rules
+        h2
+            color: $secondColor
+            font-weight: bold
+            font-size: 32px
+            text-align: center
+            margin-bottom: 20px
+            @media (max-width: 650px)
+                font-size: 24px
+            @media (max-width: 450px)
+                font-size: 20px
+
+        .items
+            .item
+                display: flex
+                margin-top: 50px
+                @media (max-width: 900px)
+                    margin-top: 30px
+                @media (max-width: 450px)
+                    margin-top: 15px
+                .number
+                    @media (max-width: 650px)
+                        margin-left: 10px
+                    img
+                        height: 76px
+                        color: $secondColor
+                        @media (max-width: 900px)
+                            height: 50px
+                        @media (max-width: 450px)
+                            height: 30px
+
+                p
+                    font-size: 16px
+                    color: $textColor
+                    font-weight: bold
+                    line-height: 1.25
+                    margin-left: 20px
+                    @media (max-width: 900px)
+                        font-size: 14px
+                    @media (max-width: 650px)
+                        font-size: 12px
+                    @media (max-width: 450px)
+                        margin-left: 10px
+                    span
+                        color: $secondColor
+                &:nth-child(even)
+                    p
+                        text-align: right
+                        margin-left: 0px
+                        margin-right: 20px
+                        @media (max-width: 450px)
+                            margin-left: 0px
+                            margin-right: 10px
+                    .number
+                        @media (max-width: 650px)
+                            margin-left: 0
+                            margin-right: 10px

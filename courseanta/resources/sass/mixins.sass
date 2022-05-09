@@ -1,0 +1,163 @@
+@import './variables'
+
+@mixin header-styles()
+    position: relative
+    width: 100%
+    top: 0
+    left: 0
+    z-index: 50
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: $footer
+        z-index: 2
+
+    .header-burger.active
+        &::before
+            transform: rotate(45deg)
+            top: 9px
+        &::after
+            transform: rotate(-45deg)
+            bottom: 9px
+        span
+            transform: scale(0)
+
+    .header-burger
+        display: none
+        position: relative
+        z-index: 3
+        @media (max-width: 768px)
+            display: block
+            position: relative
+            width: 30px
+            height: 20px
+            margin-right: 5px
+            &::before, &::after
+                content: ''
+                background-color: $textColor
+                position: absolute
+                width: 100%
+                height: 2px
+                left: 0
+            &::before
+                top: 0
+            &::after
+                bottom: 0
+            span
+                position: absolute
+                background-color: $textColor
+                left: 0
+                width: 100%
+                height: 2px
+                top: 9px
+
+
+    .header-body
+        position: relative
+        display: flex
+        justify-content: space-between
+        height: 50px
+        align-items: center
+        .header-logo
+            position: relative
+            z-index: 3
+
+    .header-menu.active
+        top: 0
+
+    .header-menu
+        @media (max-width: 768px)
+            position: fixed
+            top: -200%
+            left: 0
+            width: 100%
+            height: 100%
+            background-color: $footer
+            transition: all .3s ease 0s
+            padding: 70px 10px 20px 10px
+        .header-list
+            height: 100%
+            display: flex
+            position: relative
+            z-index: 2
+            @media (max-width: 768px)
+                display: block
+                margin-top: 30%
+
+            li
+                height: 30px
+                margin-left: 40px
+                @media (max-width: 970px)
+                    margin-left: 20px
+                @media (max-width: 768px)
+                    margin-left: 20px
+                    margin-right: 10px
+                    width: 95%
+                a
+                    &:hover
+                        color: $secondColor
+                        padding-bottom: 1px
+                        transition: .1s
+                        border-bottom: 2px solid $secondColor
+                    @media (max-width: 768px)
+                        &:hover
+                            color: $textColor
+                            padding-bottom: 0
+                            border-bottom: none
+                @media (max-width: 768px)
+                    border-top: 2px solid $secondColor
+                    text-align: center
+                    margin-left: 0
+                    &:last-child
+                        border-top: 2px solid $secondColor
+                        border-bottom: 2px solid $secondColor
+            .header-link
+                color: $textColor
+                font-size: 18px
+                font-weight: bold
+                @media (max-width: 970px)
+                    font-size: 16px
+                @media (max-width: 768px)
+                    color: $secondColor
+
+@mixin footer-styles()
+    margin-top: 20px
+    height: 145px
+    width: 100%
+    background-color: $footer
+    @media (max-width: 390px)
+        height: 100px
+    .container-d
+        h2
+            text-align: center
+            font-size: 24px
+            margin-bottom: 15px
+            color: $textColor
+            @media (max-width: 690px)
+                font-size: 20px
+            @media (max-width: 390px)
+                font-size: 16px
+                padding-top: 20px
+    .logos
+        display: flex
+        justify-content: space-between
+        align-items: center
+        img
+            @media (max-width: 920px)
+                width: 20%
+            &:last-child
+                @media (max-width: 920px)
+                    width: 10%
+
+@mixin container()
+    max-width: 80%
+    margin: 0 auto
+    @media ( max-width: 1350px )
+        max-width: 90%
+
+    @media ( max-width: 690px )
+        max-width: 100%

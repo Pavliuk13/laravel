@@ -1,0 +1,166 @@
+@import './variables'
+@import './mixins'
+
+*
+    padding: 0
+    margin: 0
+
+html, body
+    height: 100%
+
+body.lock
+    @media (max-width: 768px)
+        overflow: hidden
+
+.container-d
+    @include container()
+
+body
+    font-size: 1em
+    min-width: 320px
+    position: relative
+    line-height: 1.5
+    font-family: 'Inter', sans-serif
+    overflow-x: hidden
+    opacity: 1
+    background-color: $mainColor
+
+a
+    text-decoration: none
+
+li
+    list-style: none
+
+header
+    @include header-styles()
+
+
+
+footer
+    @include footer-styles()
+
+.container-d
+    .buttons
+        display: flex
+        justify-content: space-between
+        margin-top: 20px
+        margin-bottom: 20px
+        @media (max-width: 1130px)
+            display: grid
+            grid-template-columns: auto auto auto
+            justify-content: space-around
+
+        @media (max-width: 375px)
+            grid-template-columns: auto auto
+
+        button
+            width: 160px
+            height: 40px
+            border: 2px solid $secondColor
+            border-radius: 5px
+            background: none
+            font-size: 24px
+            color: $secondColor
+            font-weight: bold
+            @media (max-width: 1130px)
+                margin-bottom: 10px
+            @media (max-width: 560px)
+                width: 100px
+                height: 25px
+                font-size: 14px
+            &:hover
+                background: $secondColor
+                color: $textColor
+                transition: .3s ease 0s
+                cursor: pointer
+    .courses
+        display: grid
+        grid-template-columns: auto auto auto
+        justify-content: space-between
+        @media (max-width: 1220px)
+            grid-template-columns: auto auto
+            justify-content: space-around
+        @media (max-width: 375px)
+            grid-template-columns: auto
+            justify-content: center
+        .item
+            width: 350px
+            margin-top: 20px
+            border: 2px solid $secondColor
+            border-radius: 10px
+            @media (max-width: 840px)
+                width: 250px
+                img
+                    width: 250px
+            @media (max-width: 560px)
+                width: 170px
+                img
+                    width: 170px
+            .header
+                display: flex
+                justify-content: space-between
+                font-size: 32px
+                color: $textColor
+                font-weight: bold
+                margin-left: 5px
+                @media (max-width: 840px)
+                    font-size: 26px
+                @media (max-width: 560px)
+                    font-size: 16px
+                .price
+                    color: $secondColor
+                    margin-right: 5px
+            h1
+                font-size: 24px
+                color: $textColor
+                text-align: center
+                border-bottom: 2px solid $secondColor
+                font-weight: bold
+                @media (max-width: 840px)
+                    font-size: 20px
+                @media (max-width: 560px)
+                    font-size: 14px
+            p
+                font-size: 14px
+                color: $textColor
+                font-weight: bold
+                padding: 10px
+                @media (max-width: 840px)
+                    font-size: 12px
+                @media (max-width: 560px)
+                    font-size: 10px
+                    padding: 5px
+            .action
+                text-align: center
+                margin-bottom: 10px
+                button
+                    font-size: 24px
+                    background: $secondColor
+                    border: none
+                    border-radius: 10px
+                    height: 52px
+                    width: 220px
+                    @media (max-width: 840px)
+                        width: 200px
+                        height: 40px
+                        font-size: 20px
+                    @media (max-width: 560px)
+                        width: 105px
+                        height: 24px
+                        font-size: 14px
+                    a
+                        color: $textColor
+                        font-weight: bold
+            &:last-child
+                @media (max-width: 1220px)
+                    display: none
+    .pointers
+        display: none
+        @media (max-width: 1220px)
+            display: flex
+            justify-content: space-around
+            margin-top: 20px
+            img
+                cursor: pointer
+                @media (max-width: 560px)
+                    height: 23px

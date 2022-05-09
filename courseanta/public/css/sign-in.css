@@ -1,0 +1,227 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-size: 1em;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.65;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  opacity: 1;
+  background-color: #1D1626;
+}
+
+::-webkit-input-placeholder {
+  color: #ffffff;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
+::-moz-placeholder {
+  color: #ffffff;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
+:-ms-input-placeholder {
+  color: #ffffff;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
+::-ms-input-placeholder {
+  color: #ffffff;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
+::placeholder {
+  color: #ffffff;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
+form {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 45%;
+  height: 90%;
+  margin: 0 auto;
+  border: 2px solid #D423F1;
+  border-radius: 40px;
+  margin-top: 1%;
+}
+@media (max-width: 1160px) {
+  form {
+    width: 60%;
+  }
+}
+@media (max-width: 900px) {
+  form {
+    width: 70%;
+  }
+}
+@media (max-width: 745px) {
+  form {
+    width: 80%;
+  }
+}
+@media (max-width: 635px) {
+  form {
+    width: 90%;
+    height: 90%;
+  }
+}
+@media (max-width: 390px) {
+  form {
+    height: 100%;
+  }
+}
+form .logo {
+  text-align: center;
+}
+form .logo img {
+  width: 80%;
+}
+form .input-list .buttons {
+  width: 446px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media (max-width: 635px) {
+  form .input-list .buttons {
+    width: 400px;
+  }
+}
+@media (max-width: 512px) {
+  form .input-list .buttons {
+    width: 296px;
+  }
+}
+@media (max-width: 390px) {
+  form .input-list .buttons {
+    width: 260px;
+  }
+}
+form .input-list .buttons a {
+  text-align: center;
+  text-decoration: none;
+  width: 190px;
+  height: 45px;
+  border: 2px solid #D423F1;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #D423F1;
+  margin-right: 10px;
+}
+@media (max-width: 512px) {
+  form .input-list .buttons a {
+    font-size: 16px;
+    height: 31px;
+    margin-top: 20px;
+  }
+}
+form .input-list .buttons a:last-child {
+  margin-right: 0;
+  margin-left: 10px;
+  background-color: #D423F1;
+  color: #ffffff;
+}
+form .input-list .input-item {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+form .input-list .input-item:first-child {
+  margin-top: 0px;
+}
+form .input-list .input-item label {
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+form .input-list .input-item label.desc {
+  color: #84809F;
+  font-weight: normal;
+  width: 446px;
+}
+form .input-list .input-item label.desc a {
+  color: #2100FF;
+  font-weight: normal;
+}
+@media (max-width: 635px) {
+  form .input-list .input-item label.desc {
+    width: 400px;
+  }
+}
+@media (max-width: 512px) {
+  form .input-list .input-item label.desc {
+    width: 296px;
+  }
+}
+@media (max-width: 390px) {
+  form .input-list .input-item label.desc {
+    width: 260px;
+  }
+}
+form .input-list .input-item input {
+  width: 446px;
+  height: 48px;
+  background-color: #D423F1;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  border: none;
+  border-radius: 5px;
+  padding: 0 0 0 15px;
+}
+@media (max-width: 635px) {
+  form .input-list .input-item input {
+    width: 400px;
+  }
+}
+@media (max-width: 512px) {
+  form .input-list .input-item input {
+    width: 296px;
+  }
+}
+@media (max-width: 390px) {
+  form .input-list .input-item input {
+    width: 260px;
+    height: 40px;
+  }
+}
+form .input-list .input-item input:active {
+  border: 1px solid #ffffff;
+}

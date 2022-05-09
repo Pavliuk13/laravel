@@ -1,0 +1,563 @@
+@import './variables'
+@import './mixins'
+
+*
+    padding: 0
+    margin: 0
+
+html, body
+    height: 100%
+
+body.lock
+    @media (max-width: 768px)
+        overflow: hidden
+
+.container-d
+    @include container()
+
+body
+    font-size: 1em
+    min-width: 320px
+    position: relative
+    line-height: 1.65
+    font-family: 'Inter', sans-serif
+    overflow-x: hidden
+    opacity: 1
+    background-color: $mainColor
+
+a
+    text-decoration: none
+
+li
+    list-style: none
+
+
+header
+    @include header-styles()
+
+
+.welcome
+    @media (min-width: 1400px)
+        height: 780px
+    @media (min-width: 1085px)
+        height: 100vh
+
+    .image
+        position: absolute
+        z-index: -1
+        margin-top: -50px
+        width: 100%
+        img
+            width: 100%
+
+        @media (max-width: 1085px)
+            position: relative
+            margin-top: 0
+
+
+
+    .container-d
+        padding-top: 5%
+        margin: 0 auto
+
+        @media (max-width: 1230px)
+            padding-top: 3%
+
+        @media (max-width: 1200px)
+            padding-top: 1%
+
+        @media (max-width: 1085px)
+            padding-top: 0
+            margin-top: 10px
+
+        h2
+            max-width: 48%
+            text-align: center
+            padding-left: 31px
+            color: $textColor
+            font-size: 64px
+            line-height: 1
+            text-shadow: 3px 3px 2px $secondColor
+
+            @media (max-width: 1320px)
+                max-width: 40%
+                font-size: 48px
+
+            @media (max-width: 1170px)
+                max-width: 50%
+                margin-bottom: 10px
+
+            @media (max-width: 1085px)
+                max-width: 100%
+
+            @media (max-width: 690px)
+                font-size: 32px
+
+            @media (max-width: 390px)
+                font-size: 20px
+
+        p
+            max-width: 48%
+            text-align: center
+            margin-bottom: 30px
+            color: $textColor
+            font-weight: bold
+            padding: 14px 31px 14px 31px
+            background-color: rgba(212, 35, 241, 0.2)
+            border: 3px solid $secondColor
+            text-shadow: 1px 2px $footer
+            @media (max-width: 1320px)
+                max-width: 40%
+                font-size: 14px
+            @media (max-width: 1170px)
+                max-width: 50%
+            @media (max-width: 1085px)
+                max-width: 100%
+            @media (max-width: 690px)
+                font-size: 12px
+                margin-bottom: 10px
+            @media (max-width: 390px)
+                font-size: 10px
+                padding: 5px
+
+        a
+            max-width: 48%
+            margin-left: 17%
+            padding: 19px 16px 19px 16px
+            font-size: 24px
+            font-weight: bold
+            border: 3px solid $secondColor
+            color: $secondColor
+            border-radius: 5px
+
+            @media (max-width: 1320px)
+                max-width: 40%
+                margin-left: 15%
+                font-size: 18px
+                padding: 15px 12px
+
+            @media (max-width: 1170px)
+                max-width: 50%
+                margin-left: 18%
+
+            @media (max-width: 1085px)
+                max-width: 100%
+                margin-left: 40%
+
+            @media (max-width: 860px)
+                margin-left: 38%
+
+            @media (max-width: 775px)
+                margin-left: 36%
+
+            @media (max-width: 670px)
+                margin-left: 36%
+                font-size: 14px
+                padding: 8px 23px
+                border: 2px solid $secondColor
+
+            @media (max-width: 540px)
+                margin-left: 34%
+
+            @media (max-width: 490px)
+                margin-left: 32%
+
+            @media (max-width: 440px)
+                margin-left: 30%
+
+            @media (max-width: 390px)
+                margin-left: 28%
+
+            &:hover
+                border: 3px solid $textColor
+                color: $textColor
+                transition: .1s
+                @media (max-width: 670px)
+                    border: 2px solid $textColor
+
+.container-d
+    h2
+        font-size: 3em
+        color: $textColor
+        text-align: center
+
+        @media (max-width: 690px)
+            font-size: 32px
+
+        @media (max-width: 390px)
+            font-size: 20px
+
+    .testimonials
+        position: relative
+        margin-top: 20px
+
+        .left, .right
+            visibility: hidden
+            position: absolute
+
+        @media ( max-width: 1350px )
+            margin-top: -100px
+
+        @media ( max-width: 1320px )
+            margin-top: -120px
+
+        @media ( max-width: 1300px )
+            margin-top: -140px
+
+        @media ( max-width: 1260px )
+            margin-top: -160px
+
+        @media ( max-width: 1215px )
+            margin-top: -180px
+
+        @media ( max-width: 1190px )
+            margin-top: -200px
+
+        @media ( max-width: 1145px )
+            margin-top: -220px
+
+        @media ( max-width: 1100px )
+            margin-top: -240px
+
+        @media (max-width: 1085px)
+            margin-top: 20px
+
+        @media (max-width: 560px)
+            .left, .right
+                visibility: visible
+                position: relative
+            .left
+                margin-left: 10%
+            .right
+                margin-right: 10%
+
+        .wrapper
+            display: flex
+            justify-content: space-between
+            margin-top: 40px
+
+            @media (max-width: 1220px)
+                display: grid
+                grid-template-columns: auto auto
+                max-width: 60%
+                margin:  0 auto
+
+            @media (max-width: 1010px)
+                max-width: 80%
+
+            @media (max-width: 760px)
+                max-width: 100%
+
+
+
+            @media (max-width: 560px)
+                display: flex
+                justify-content: space-between
+                align-items: center
+                .second, .third, .fourth
+                    visibility: hidden
+                    position: absolute
+
+            .testimonials-item
+                height: 520px
+                width: 255px
+                border: 2px solid $secondColor
+                border-radius: 30px
+                @media (max-width: 1220px)
+                    margin-top: 10px
+
+                @media (max-width: 1010px)
+                    margin-top: 20px
+
+                @media (max-width: 560px)
+                    height: 340px
+                    width: 171px
+
+                .comment
+                    font-size: 14px
+                    color: $textColor
+                    font-weight: bold
+                    padding: 0px 17px
+                    line-height: 1.5
+                    text-align: center
+                    @media (max-width: 560px)
+                        font-size: 10px
+                        padding: 0px 5px
+                        line-height: 1.2
+
+                h1
+                    font-size: 24px
+                    color: $secondColor
+                    text-align: center
+                    padding: 0px 17px
+                    @media (max-width: 560px)
+                        font-size: 14px
+                        padding: 5px 5px
+
+                .image
+                    text-align: center
+                    margin-top: 10px
+
+                    img
+                        @media (max-width: 560px)
+                            width: 50%
+
+
+
+    .line
+        width: 100%
+        height: 3px
+        margin-top: 20px
+        margin-bottom: 20px
+        background-color: $secondColor
+
+    .why-people-choose
+        .block
+            display: flex
+            width: 100%
+            @media (max-width: 830px)
+                justify-content: center
+                align-items: center
+            .image
+                text-align: right
+                margin-top: 50px
+                margin-left: 10%
+                @media (max-width: 1020px)
+                    margin-top: 10px
+                img
+                    @media (max-width: 980px)
+                        width: 100%
+                        margin-top: 20%
+                    @media (max-width: 930px)
+                        margin-top: 25%
+                    @media (max-width: 860px)
+                        margin-top: 30%
+                    @media (max-width: 830px)
+                        visibility: hidden
+                        position: absolute
+        .fact
+            display: flex
+            align-items: center
+            margin-top: 50px
+            @media (max-width: 830px)
+                margin-top: 30px
+            @media (max-width: 830px)
+                margin-top: 20px
+            img
+                @media (max-width: 1150px)
+                    width: 70px
+                @media (max-width: 1020px)
+                    width: 65px
+                @media (max-width: 560px)
+                    width: 50px
+                @media (max-width: 390px)
+                    width: 40px
+
+            h1
+                color: $secondColor
+                font-weight: bold
+                margin-left: 20px
+                @media (max-width: 1150px)
+                    font-size: 24px
+                @media (max-width: 1020px)
+                    font-size: 22px
+                @media (max-width: 560px)
+                    font-size: 18px
+                @media (max-width: 390px)
+                    font-size: 16px
+
+            &:last-child
+                h1
+                    line-height: 1
+
+
+    .program
+        h2
+            @media (max-width: 690px)
+                margin-bottom: -50px
+    .plan
+        display: grid
+        grid-template-columns: auto auto auto auto
+        margin-top: 40px
+
+
+
+        @media (max-width: 970px)
+            grid-template-columns: auto auto
+            justify-content: center
+
+        .element
+            margin-left: 15%
+            text-align: center
+            @media (max-width: 970px)
+                margin-left: 0
+                margin-top: 20px
+
+            &:first-child
+                margin-left: 0
+
+            img
+                @media (max-width: 690px)
+                    width: 80px
+                @media (max-width: 455px)
+                    width: 60px
+
+            h1
+                font-size: 24px
+                color: $secondColor
+                @media (max-width: 690px)
+                    font-size: 20px
+                @media (max-width: 455px)
+                    font-size: 16px
+
+            p
+                color: $textColor
+                font-weight: bold
+                @media (max-width: 970px)
+                    width: 80%
+                    margin-left: 10%
+                @media (max-width: 690px)
+                    font-size: 12px
+                @media (max-width: 455px)
+                    font-size: 10px
+
+    .form
+        h2
+            line-height: 1
+            @media (max-width: 690px)
+                padding-top: 20px
+                margin-bottom: 20px
+        width: 920px
+        height: 300px
+        background-color: $secondColor
+        border-radius: 20px
+        margin: 0 auto
+        @media (max-width: 1090px)
+            width: 800px
+        @media (max-width: 970px)
+            width: 700px
+        @media (max-width: 850px)
+            height: 550px
+        @media (max-width: 850px)
+            width: 600px
+        @media (max-width: 640px)
+            width: 500px
+        @media (max-width: 560px)
+            width: 360px
+        @media (max-width: 390px)
+            height: 500px
+            width: 300px
+
+
+        .second
+            width: 185px
+            height: 50px
+            background-color: $mainColor
+            border-radius: 7px
+            display: flex
+            justify-content: center
+            align-items: center
+            @media (max-width: 1090px)
+                width: 150px
+                height: 40px
+            @media (max-width: 390px)
+                width: 280px
+            a
+                font-size: 24px
+                font-weight: bold
+                color: $textColor
+                @media (max-width: 1090px)
+                    font-size: 20px
+                @media (max-width: 390px)
+                    font-size: 16px
+            visibility: hidden
+            position: absolute
+            @media (max-width: 850px)
+                visibility: visible
+                position: relative
+
+
+
+        .actions
+            display: flex
+            justify-content: center
+            @media (max-width: 850px)
+                display: grid
+                grid-template-columns: auto
+            .inputs
+                margin-right: 5%
+                .name
+                    width: 338px
+                    height: 35px
+                    padding-bottom: 25px
+                    @media (max-width: 1090px)
+                        width: 290px
+                    @media (max-width: 850px)
+                        width: 500px
+                    @media (max-width: 640px)
+                        width: 400px
+                    @media (max-width: 560px)
+                        width: 338px
+                    @media (max-width: 390px)
+                        width: 280px
+
+                    input
+                        width: 100%
+                        height: 100%
+                        padding: 12px 20px
+                        margin: 8px 0
+                        border: none
+                        border-radius: 8px
+                        box-sizing: border-box
+                        font-weight: bold
+                        color: $footer
+
+                .button
+                    width: 185px
+                    height: 50px
+                    background-color: $mainColor
+                    border-radius: 7px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    @media (max-width: 1090px)
+                        width: 150px
+                        height: 40px
+                    @media (max-width: 850px)
+                        visibility: hidden
+                        position: absolute
+                    a
+                        font-size: 24px
+                        font-weight: bold
+                        color: $textColor
+                        @media (max-width: 1090px)
+                            font-size: 20px
+
+
+
+            textarea
+                width: 380px
+                padding: 12px 20px
+                margin: 8px 0
+                border: none
+                border-radius: 8px
+                box-sizing: border-box
+                font-weight: bold
+                color: $footer
+                resize: none
+                @media (max-width: 1090px)
+                    width: 290px
+                @media (max-width: 850px)
+                    width: 500px
+                    height: 200px
+                @media (max-width: 640px)
+                    width: 400px
+                @media (max-width: 560px)
+                    width: 338px
+                    height: 180px
+                @media (max-width: 390px)
+                    width: 280px
+
+
+footer
+    @include footer-styles()
