@@ -126,31 +126,52 @@ form .input-list .buttons {
     width: 260px;
   }
 }
-form .input-list .buttons a {
-  text-align: center;
+form .input-list .buttons button {
   text-decoration: none;
   width: 190px;
   height: 45px;
+  background-color: #D423F1;
   border: 2px solid #D423F1;
   border-radius: 8px;
   margin-top: 20px;
   font-size: 24px;
   font-weight: bold;
-  color: #D423F1;
+  color: #ffffff;
   margin-right: 10px;
 }
-@media (max-width: 512px) {
-  form .input-list .buttons a {
-    font-size: 16px;
-    height: 31px;
-    margin-top: 20px;
+@media (max-width: 635px) {
+  form .input-list .buttons button {
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    margin-top: 0;
   }
 }
-form .input-list .buttons a:last-child {
+@media (max-width: 512px) {
+  form .input-list .buttons button {
+    font-size: 16px;
+    height: 31px;
+    margin-top: 0;
+  }
+}
+@media (max-width: 512px) {
+  form .input-list .buttons button:last-child {
+    margin-left: 10px;
+  }
+}
+form .input-list .buttons button:first-child {
   margin-right: 0;
   margin-left: 10px;
-  background-color: #D423F1;
-  color: #ffffff;
+  background-color: #1D1626;
+}
+@media (max-width: 512px) {
+  form .input-list .buttons button:first-child {
+    margin-right: 5px;
+  }
+}
+form .input-list .buttons button a {
+  text-decoration: none;
+  color: #D423F1;
 }
 form .input-list .input-item {
   display: -ms-grid;

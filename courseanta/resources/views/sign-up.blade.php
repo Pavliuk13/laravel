@@ -51,7 +51,7 @@
                     @enderror
                 </div>
                 <div class="buttons">
-                    <a href="/" class="back">Назад</a>
+                    <button type="submit"><a href="/" class="back">Назад</a></button>
                     <button type="submit" name="send">Реєстрація</button>
                 </div>
             </div>
