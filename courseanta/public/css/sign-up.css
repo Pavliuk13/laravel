@@ -106,6 +106,9 @@ form .logo {
 form .logo img {
   width: 80%;
 }
+form .alert-danger {
+  color: red;
+}
 form .input-list .buttons {
   width: 446px;
   margin: 0 auto;

@@ -9,11 +9,9 @@
     <div class="container-d">
         <div class="buttons">
             <button>УСІ КУРСИ</button>
-            <button>JAVA</button>
-            <button>C#</button>
-            <button>C++</button>
-            <button>PYTHON</button>
-            <button>KOTLIN</button>
+            @foreach($categories as $el)
+                <button>{{strtoupper($el->name)}}</button>
+            @endforeach
         </div>
 
         <div class="courses">
