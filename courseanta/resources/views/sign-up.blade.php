@@ -6,7 +6,8 @@
 @endsection
 
 @section('content')
-    <form>
+    <form method="post" action="{{ route('sign-up.perform') }}">
+        @csrf
         <div class="wrapper">
             <div class="logo">
                 <img src="/img/logo-2.png" alt="logo">
@@ -14,29 +15,44 @@
             <div class="input-list">
                 <div class="input-item">
                     <label for="name">Прізвище та ім'я</label>
-                    <input id="name" type="text" placeholder="Введіть текст">
+                    <input id="name" name="name" type="text" placeholder="Введіть текст">
+                    @error('name')
+                        <div class="alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="input-item">
                     <label for="user-name">Ім'я користувача</label>
-                    <input id="user_name" type="text" placeholder="Створити ім'я користувача">
+                    <input id="user_name" name="username" type="text" placeholder="Створити ім'я користувача">
+                    @error('username')
+                        <div class="alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="input-item">
                     <label for="email">Email</label>
-                    <input id="email" type="email" placeholder="example@email.com">
+                    <input id="email" name="email" type="email" placeholder="example@email.com">
+                    @error('email')
+                        <div class="alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="input-item">
                     <label for="pass">Пароль</label>
-                    <input id="pass" type="password" placeholder="Придумайте пароль">
+                    <input id="pass" name="password" type="password" placeholder="Придумайте пароль">
                     <label class="desc">Ваш пароль має містити хоча б 1 цифру, а також 1 літеру у верхньому регістрі</label>
+                    @error('password')
+                        <div class="alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="input-item">
                     <label for="confirm_pass">Підтвердити пароль</label>
-                    <input id="confirm_pass" type="password" placeholder="Підтвердіть пароль">
+                    <input id="confirm_pass" name="password_2" type="password" placeholder="Підтвердіть пароль">
                     <label class="desc">Паролі мають співпадати</label>
+                    @error('password_2')
+                        <div class="alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="buttons">
                     <a href="/" class="back">Назад</a>
-                    <a href="#" class="continue">Реєстрація</a>
+                    <button type="submit" name="send">Реєстрація</button>
                 </div>
             </div>
         </div>
