@@ -39,6 +39,10 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($value);
     }
 
+    public function bought_courses(){
+        return $this->belongsToMany(Course::class, 'user_course');
+    }
+
     /**
      * The attributes that should be cast.
      *

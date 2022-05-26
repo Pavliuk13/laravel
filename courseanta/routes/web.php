@@ -11,6 +11,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get('/', 'HomeController@index')->name('home.index');
     Route::get('/about', 'HomeController@about')->name('home.about');
     Route::get('/courses', 'HomeController@courses')->name('home.courses');
+    Route::get('/cart', 'HomeController@user_cart')->name('home.user_cart');
+    Route::get('/course/{id}', 'HomeController@course')->name('home.course');
+    Route::post('/course/{id}', 'HomeController@cart')->name('home.cart');
 
     Route::group(['middleware' => ['guest']], function() {
         /**

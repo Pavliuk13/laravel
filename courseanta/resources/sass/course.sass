@@ -1,0 +1,199 @@
+@import './variables'
+@import './mixins'
+
+*
+    padding: 0
+    margin: 0
+
+html, body
+    height: 100%
+
+body.lock
+    @media (max-width: 768px)
+        overflow: hidden
+
+.container-d
+    @include container()
+
+body
+    font-size: 1em
+    min-width: 320px
+    position: relative
+    line-height: 1.5
+    font-family: 'Inter', sans-serif
+    overflow-x: hidden
+    opacity: 1
+    background-color: $mainColor
+
+a
+    text-decoration: none
+
+li
+    list-style: none
+
+header
+    @include header-styles()
+
+
+
+footer
+    @include footer-styles()
+
+
+.container-d
+    @media (max-width: 690px)
+        width: 90%
+
+.course
+    margin-top: 20px
+    width: 100%
+    border: 3px solid $secondColor
+    border-radius: 10px
+
+    .header
+        height: 104px
+        background-color: $secondColor
+        display: flex
+        align-items: center
+        justify-content: space-between
+        border-radius: 5px
+        color: $textColor
+        font-weight: bold
+        margin-bottom: 10px
+        .data
+            margin-left: 20px
+            h1
+                font-size: 36px
+                @media (max-width: 900px)
+                    font-size: 24px
+                @media (max-width: 595px)
+                    font-size: 20px
+                @media (max-width: 595px)
+                    font-size: 18px
+            .author, .date
+                font-size: 20px
+                line-height: 1.2
+                @media (max-width: 900px)
+                    font-size: 16px
+                @media (max-width: 595px)
+                    font-size: 12px
+
+        .price
+            font-size: 36px
+            margin-right: 20px
+            @media (max-width: 900px)
+                font-size: 24px
+            @media (max-width: 595px)
+                font-size: 20px
+            @media (max-width: 595px)
+                font-size: 18px
+    .about
+        display: flex
+        margin-left: 10px
+        margin-right: 20px
+        @media (max-width: 768px)
+            display: grid
+            justify-content: center
+        .actions
+            margin-right: 20px
+            @media (max-width: 768px)
+                margin-right: 0
+            .image
+                @media (max-width: 768px)
+                    text-align: center
+                    margin-left: 2%
+                img
+                    @media (max-width: 768px)
+                        width: 100%
+            button
+                width: 350px
+                height: 50px
+                background: $secondColor
+                border: 2px solid $secondColor
+                border-radius: 5px
+                margin-top: 10px
+                font-size: 24px
+                color: $textColor
+                font-weight: bold
+                @media (max-width: 768px)
+                    width: 98%
+                    margin-left: 2%
+                @media (max-width: 595px)
+                    height: 30px
+                    font-size: 16px
+                a
+                    font-size: 24px
+                    color: $textColor
+                    font-weight: bold
+                    @media (max-width: 595px)
+                        font-size: 16px
+                &:last-child
+                    background: none
+                    a
+                        color: $secondColor
+
+        p
+            font-size: 14px
+            color: $textColor
+            font-weight: bold
+            @media (max-width: 900px)
+                font-size: 12px
+            @media (max-width: 768px)
+                margin-top: 10px
+                margin-left: 2%
+                width: 98%
+
+    h2
+        font-size: 36px
+        color: $secondColor
+        font-weight: bold
+        text-align: center
+        margin-top: 20px
+        margin-bottom: 20px
+        @media (max-width: 595px)
+            font-size: 20px
+
+    .testimonials
+        .item
+            width: 90%
+            border: 2px solid $secondColor
+            border-radius: 5px
+            padding: 20px
+            margin: 0 auto
+            margin-bottom: 10px
+            @media (max-width: 768px)
+                width: 88%
+            @media (max-width: 595px)
+                width: 80%
+                padding: 10px
+            p
+                font-size: 15px
+                font-weight: bold
+                color: $textColor
+                @media (max-width: 900px)
+                    font-size: 12px
+                @media (max-width: 595px)
+                    font-size: 10px
+            .date
+                font-size: 12px
+                color: $secondColor
+                font-weight: bold
+                margin-top: 10px
+                @media (max-width: 595px)
+                    font-size: 8px
+            .user
+                display: flex
+                align-items: center
+                .name
+                    font-size: 20px
+                    font-weight: bold
+                    a
+                        color: $secondColor
+                    @media (max-width: 595px)
+                        font-size: 14px
+                .image
+                    margin-right: 20px
+                    img
+                        width: 65px
+                        @media (max-width: 595px)
+                            font-size: 50px

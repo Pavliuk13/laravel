@@ -2,18 +2,12 @@
 
 @section('title-block')Наші курси@endsection
 @section('style')
-    <link rel="stylesheet" href="/css/courses.css">
+    <link rel="stylesheet" href="/css/cart.css">
 @endsection
 
 @section('content')
     <div class="container-d">
-        <div class="buttons">
-            <button>УСІ КУРСИ</button>
-            @foreach($categories as $el)
-                <button>{{strtoupper($el->name)}}</button>
-            @endforeach
-        </div>
-
+        <h1>ВАШІ КУРСИ</h1>
         <div class="courses">
             @foreach($courses as $el)
                 <div class="item">
@@ -25,16 +19,11 @@
                         <img src="{{$el->image_path}}" alt="C#">
                     </div>
                     <h1>{{$el->title}}</h1>
-                    <p>{{mb_substr($el->description, 0, 328)}}...</p>
                     <div class="action">
-                        <button><a href="/course/{{$el->id}}">ДЕТАЛЬНІШЕ</a></button>
+                        <button><a href="/course/{{$el->id}}">ВІДКРИТИ</a></button>
                     </div>
                 </div>
             @endforeach
-        </div>
-        <div class="pointers">
-            <img src="/img/left.png" alt="left">
-            <img src="/img/right.png" alt="right">
         </div>
     </div>
 @endsection

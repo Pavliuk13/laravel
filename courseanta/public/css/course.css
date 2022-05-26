@@ -1,0 +1,533 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  body.lock {
+    overflow: hidden;
+  }
+}
+
+.container-d {
+  max-width: 80%;
+  margin: 0 auto;
+}
+@media (max-width: 1350px) {
+  .container-d {
+    max-width: 90%;
+  }
+}
+@media (max-width: 690px) {
+  .container-d {
+    max-width: 100%;
+  }
+}
+
+body {
+  font-size: 1em;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.5;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  opacity: 1;
+  background-color: #1D1626;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 2;
+}
+header .header-burger.active::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 9px;
+}
+header .header-burger.active::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  bottom: 9px;
+}
+header .header-burger.active span {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+header .header-burger {
+  display: none;
+  position: relative;
+  z-index: 3;
+}
+@media (max-width: 768px) {
+  header .header-burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  header .header-burger::before, header .header-burger::after {
+    content: "";
+    background-color: #ffffff;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+  }
+  header .header-burger::before {
+    top: 0;
+  }
+  header .header-burger::after {
+    bottom: 0;
+  }
+  header .header-burger span {
+    position: absolute;
+    background-color: #ffffff;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+  }
+}
+header .header-body {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+header .header-body .header-logo {
+  position: relative;
+  z-index: 3;
+}
+header .header-menu.active {
+  top: 0;
+}
+@media (max-width: 768px) {
+  header .header-menu {
+    position: fixed;
+    top: -200%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    padding: 70px 10px 20px 10px;
+  }
+}
+header .header-menu .header-list {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 768px) {
+  header .header-menu .header-list {
+    display: block;
+    margin-top: 30%;
+  }
+}
+header .header-menu .header-list li {
+  height: 30px;
+  margin-left: 40px;
+}
+@media (max-width: 970px) {
+  header .header-menu .header-list li {
+    margin-left: 20px;
+  }
+}
+@media (max-width: 768px) {
+  header .header-menu .header-list li {
+    margin-left: 20px;
+    margin-right: 10px;
+    width: 95%;
+  }
+}
+header .header-menu .header-list li a:hover {
+  color: #D423F1;
+  padding-bottom: 1px;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  border-bottom: 2px solid #D423F1;
+}
+@media (max-width: 768px) {
+  header .header-menu .header-list li a:hover {
+    color: #ffffff;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+@media (max-width: 768px) {
+  header .header-menu .header-list li {
+    border-top: 2px solid #D423F1;
+    text-align: center;
+    margin-left: 0;
+  }
+  header .header-menu .header-list li:last-child {
+    border-top: 2px solid #D423F1;
+    border-bottom: 2px solid #D423F1;
+  }
+}
+header .header-menu .header-list .header-link {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+}
+@media (max-width: 970px) {
+  header .header-menu .header-list .header-link {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  header .header-menu .header-list .header-link {
+    color: #D423F1;
+  }
+}
+
+footer {
+  margin-top: 20px;
+  height: 145px;
+  width: 100%;
+  background-color: #000;
+}
+@media (max-width: 390px) {
+  footer {
+    height: 100px;
+  }
+}
+footer .container-d h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+@media (max-width: 690px) {
+  footer .container-d h2 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 390px) {
+  footer .container-d h2 {
+    font-size: 16px;
+    padding-top: 20px;
+  }
+}
+footer .logos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (max-width: 920px) {
+  footer .logos img {
+    width: 20%;
+  }
+}
+@media (max-width: 920px) {
+  footer .logos img:last-child {
+    width: 10%;
+  }
+}
+
+@media (max-width: 690px) {
+  .container-d {
+    width: 90%;
+  }
+}
+
+.course {
+  margin-top: 20px;
+  width: 100%;
+  border: 3px solid #D423F1;
+  border-radius: 10px;
+}
+.course .header {
+  height: 104px;
+  background-color: #D423F1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.course .header .data {
+  margin-left: 20px;
+}
+.course .header .data h1 {
+  font-size: 36px;
+}
+@media (max-width: 900px) {
+  .course .header .data h1 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 595px) {
+  .course .header .data h1 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 595px) {
+  .course .header .data h1 {
+    font-size: 18px;
+  }
+}
+.course .header .data .author, .course .header .data .date {
+  font-size: 20px;
+  line-height: 1.2;
+}
+@media (max-width: 900px) {
+  .course .header .data .author, .course .header .data .date {
+    font-size: 16px;
+  }
+}
+@media (max-width: 595px) {
+  .course .header .data .author, .course .header .data .date {
+    font-size: 12px;
+  }
+}
+.course .header .price {
+  font-size: 36px;
+  margin-right: 20px;
+}
+@media (max-width: 900px) {
+  .course .header .price {
+    font-size: 24px;
+  }
+}
+@media (max-width: 595px) {
+  .course .header .price {
+    font-size: 20px;
+  }
+}
+@media (max-width: 595px) {
+  .course .header .price {
+    font-size: 18px;
+  }
+}
+.course .about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+@media (max-width: 768px) {
+  .course .about {
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+.course .about .actions {
+  margin-right: 20px;
+}
+@media (max-width: 768px) {
+  .course .about .actions {
+    margin-right: 0;
+  }
+}
+@media (max-width: 768px) {
+  .course .about .actions .image {
+    text-align: center;
+    margin-left: 2%;
+  }
+}
+@media (max-width: 768px) {
+  .course .about .actions .image img {
+    width: 100%;
+  }
+}
+.course .about .actions button {
+  width: 350px;
+  height: 50px;
+  background: #D423F1;
+  border: 2px solid #D423F1;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .course .about .actions button {
+    width: 98%;
+    margin-left: 2%;
+  }
+}
+@media (max-width: 595px) {
+  .course .about .actions button {
+    height: 30px;
+    font-size: 16px;
+  }
+}
+.course .about .actions button a {
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: bold;
+}
+@media (max-width: 595px) {
+  .course .about .actions button a {
+    font-size: 16px;
+  }
+}
+.course .about .actions button:last-child {
+  background: none;
+}
+.course .about .actions button:last-child a {
+  color: #D423F1;
+}
+.course .about p {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: bold;
+}
+@media (max-width: 900px) {
+  .course .about p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .course .about p {
+    margin-top: 10px;
+    margin-left: 2%;
+    width: 98%;
+  }
+}
+.course h2 {
+  font-size: 36px;
+  color: #D423F1;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+@media (max-width: 595px) {
+  .course h2 {
+    font-size: 20px;
+  }
+}
+.course .testimonials .item {
+  width: 90%;
+  border: 2px solid #D423F1;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .course .testimonials .item {
+    width: 88%;
+  }
+}
+@media (max-width: 595px) {
+  .course .testimonials .item {
+    width: 80%;
+    padding: 10px;
+  }
+}
+.course .testimonials .item p {
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffffff;
+}
+@media (max-width: 900px) {
+  .course .testimonials .item p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 595px) {
+  .course .testimonials .item p {
+    font-size: 10px;
+  }
+}
+.course .testimonials .item .date {
+  font-size: 12px;
+  color: #D423F1;
+  font-weight: bold;
+  margin-top: 10px;
+}
+@media (max-width: 595px) {
+  .course .testimonials .item .date {
+    font-size: 8px;
+  }
+}
+.course .testimonials .item .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.course .testimonials .item .user .name {
+  font-size: 20px;
+  font-weight: bold;
+}
+.course .testimonials .item .user .name a {
+  color: #D423F1;
+}
+@media (max-width: 595px) {
+  .course .testimonials .item .user .name {
+    font-size: 14px;
+  }
+}
+.course .testimonials .item .user .image {
+  margin-right: 20px;
+}
+.course .testimonials .item .user .image img {
+  width: 65px;
+}
+@media (max-width: 595px) {
+  .course .testimonials .item .user .image img {
+    font-size: 50px;
+  }
+}
