@@ -8,15 +8,15 @@
 @section('content')
     <div class="container-d">
         <div class="buttons">
-            <button>УСІ КУРСИ</button>
+            <button type="button" class="filter-button" data-filter="all">УСІ КУРСИ</button>
             @foreach($categories as $el)
-                <button>{{strtoupper($el->name)}}</button>
+                <button type="button" class="filter-button" data-filter="{{str_replace(" ", "_", $el->name)}}">{{strtoupper($el->name)}}</button>
             @endforeach
         </div>
 
         <div class="courses">
             @foreach($courses as $el)
-                <div class="item">
+                <div class="item filter {{str_replace(" ", "_", $el->category->name)}}">
                     <div class="header">
                         <div class="category">{{$el->category->name}}</div>
                         <div class="price">{{$el->price}}$</div>

@@ -14,6 +14,7 @@
     @include('includes.footer')
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="/scripts/script.js"></script>
+    <script src="/scripts/filter.js"></script>
     <script src="https://kit.fontawesome.com/74fb05f4c1.js" crossorigin="anonymous"></script>
 </body>
 </html>
