@@ -54,7 +54,7 @@
                     <div class="item">
                         <div class="user">
                             <div class="image">
-                                <img src="../img/pyatov.png" alt="Pyatov">
+                                <img src="../img/{{$comment->user->image_path}}" alt="Pyatov">
                             </div>
                             <div class="name">
                                 <a href="./user.html">{{$comment->user->name}}</a>

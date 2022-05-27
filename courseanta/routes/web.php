@@ -13,6 +13,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get('/courses', 'HomeController@courses')->name('home.courses');
     Route::get('/cart', 'HomeController@user_cart')->name('home.user_cart');
     Route::get('/private', 'HomeController@private')->name('home.private');
+    Route::post('/private', 'HomeController@update')->name('home.update');
     Route::get('/course/{id}', 'HomeController@course')->name('home.course');
     Route::post('/course/{id}', 'HomeController@cart')->name('home.cart');
     Route::post('/course/{id}/comment', 'HomeController@comment')->name('home.comment');

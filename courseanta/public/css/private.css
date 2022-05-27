@@ -345,12 +345,16 @@ form .logo {
 }
 form .logo img {
   width: 130px;
+  border-radius: 50%;
 }
 form .logo h1 {
   font-size: 32px;
   font-weight: bold;
   color: #D423F1;
   margin-bottom: 20px;
+}
+form .input-list .file-upload-button {
+  background-color: #D423F1;
 }
 form .input-list .buttons {
   width: 446px;
@@ -483,4 +487,21 @@ form .input-list .input-item input {
 }
 form .input-list .input-item input:active {
   border: 1px solid #ffffff;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+.custom-file-input::before {
+    font-family: "Inter", sans-serif;
+    margin-top: 15px;
+    content: 'Виберіть файл';
+    display: inline-block;
+    background: #D423F1;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
 }
