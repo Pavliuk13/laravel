@@ -46,9 +46,14 @@ class HomeController extends Controller
             $course_id = $request['id'];
             $user->bought_courses()->attach($course_id);
         }
-        return redirect('/courses')->withErrors([
-            'formError'=>'Помилка при додаванні курсу в кошик'
-        ]);
+        return redirect('/courses');
+    }
+
+    public function private(){
+        $auth_user  = Auth::user()->id;
+        $user = User::find($auth_user);
+
+        return view('/private', ['user' => $user]);
     }
 
     public function comment(Request $request){
@@ -59,8 +64,6 @@ class HomeController extends Controller
         $data=array('user_id' => $auth_user, 'course_id' => $course_id, "description" => $description, "created" => $date);
         DB::table('comments')->insert($data);
         $route = '/course/' . $course_id;
-        return redirect($route)->withErrors([
-            'formError'=>'Помилка при додаванні курсу в кошик'
-        ]);
+        return redirect($route);
     }
 }

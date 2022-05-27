@@ -1,0 +1,163 @@
+@import './variables'
+@import './mixins'
+
+*
+    padding: 0
+    margin: 0
+
+html, body
+    height: 100%
+
+body.lock
+    @media (max-width: 768px)
+        overflow: hidden
+
+.container-d
+    @include container()
+
+body
+    font-size: 1em
+    min-width: 320px
+    position: relative
+    line-height: 1.5
+    font-family: 'Inter', sans-serif
+    overflow-x: hidden
+    opacity: 1
+    background-color: $mainColor
+
+a
+    text-decoration: none
+
+li
+    list-style: none
+
+header
+    @include header-styles()
+
+
+
+footer
+    @include footer-styles()
+
+::placeholder
+    color: $textColor
+    font-weight: bold
+    font-family: 'Inter', sans-serif
+    font-size: 16px
+
+form
+    display: grid
+    align-items: center
+    justify-content: center
+    width: 45%
+    height: 100%
+    margin: 0 auto
+    border: 2px solid $secondColor
+    border-radius: 40px
+    margin-top: 1%
+    @media (max-width: 1160px)
+        width: 60%
+    @media (max-width: 900px)
+        width: 70%
+    @media (max-width: 745px)
+
+        width: 80%
+    @media (max-width: 635px)
+        height: 85%
+        width: 90%
+    .logo
+        text-align: center
+        img
+            width: 130px
+        h1
+            font-size: 32px
+            font-weight: bold
+            color: $secondColor
+            margin-bottom: 20px
+    .input-list
+        .buttons
+            width: 446px
+            margin: 0 auto
+            display: flex
+            justify-content: space-between
+
+            @media (max-width: 635px)
+                width: 400px
+            @media (max-width: 512px)
+                width: 296px
+            @media (max-width: 390px)
+                width: 260px
+            button
+                a
+                    text-decoration: none
+                    color: $textColor
+                cursor: pointer
+                padding-bottom: 5px
+                text-align: center
+                text-decoration: none
+                background-color: $mainColor
+                width: 190px
+                height: 45px
+                padding-top: 5px
+                border: 2px solid $secondColor
+                border-radius: 8px
+                margin-top: 20px
+                font-size: 24px
+                font-weight: bold
+                color: $secondColor
+                margin-right: 10px
+                @media (max-width: 512px)
+                    font-size: 16px
+                    height: 31px
+                    margin-top: 20px
+                &:last-child
+                    margin-right: 0
+                    margin-left: 10px
+                    background-color: $secondColor
+                    color: $textColor
+        .input-item
+            display: grid
+            justify-content: center
+            width: 100%
+            margin-top: 20px
+            &:first-child
+                margin-top: 0px
+            label
+                font-weight: bold
+                color: $textColor
+                font-size: 14px
+                margin-bottom: 5px
+            label.desc
+                a
+                    color: #2100FF
+                    font-weight: normal
+                color: #84809F
+                font-weight: normal
+                width: 446px
+                @media (max-width: 635px)
+                    width: 400px
+                @media (max-width: 512px)
+                    width: 296px
+                @media (max-width: 390px)
+                    width: 260px
+            input
+                width: 446px
+                height: 48px
+                @media (max-width: 635px)
+                    width: 400px
+                @media (max-width: 512px)
+                    width: 296px
+                @media (max-width: 390px)
+                    width: 260px
+                    height: 40px
+                background-color: $secondColor
+                color: $textColor
+                font-weight: bold
+                font-size: 16px
+                font-family: 'Inter', sans-serif
+                border: none
+                border-radius: 5px
+                padding: 0 0 0 15px
+
+                &:active
+                    border: 1px solid $textColor
