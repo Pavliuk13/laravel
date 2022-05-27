@@ -455,6 +455,43 @@ footer .logos {
     font-size: 20px;
   }
 }
+.course .comments {
+  display: -ms-grid;
+  display: grid;
+}
+.course .comments textarea {
+  width: 90%;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #1D1626;
+  border: 2px solid #D423F1;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 10px;
+  font-family: "Inter", sans-serif;
+  resize: none;
+}
+.course .comments button {
+  width: 90%;
+  height: 40px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  background-color: #D423F1;
+  border-radius: 5px;
+  border: 2px solid #D423F1;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+.course .comments button:hover {
+  background-color: #1D1626;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  color: #D423F1;
+}
 .course .testimonials .item {
   width: 90%;
   border: 2px solid #D423F1;

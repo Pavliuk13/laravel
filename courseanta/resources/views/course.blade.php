@@ -39,39 +39,35 @@
                 <p>{{$course->description}}</p>
             </div>
             <h2>ВІДГУКИ</h2>
+
+            @auth
+            <form class="comments" method="post" action="{{ route('home.comment', $course->id) }}">
+                @csrf
+                <input type="text" name="course_id" hidden value="{{$course->id}}">
+                <textarea name="description" placeholder="Напишіть відгук..."></textarea>
+                <button type="submit">Надіслати</button>
+            </form>
+            @endauth
+
             <div class="testimonials">
-                <div class="item">
-                    <div class="user">
-                        <div class="image">
-                            <img src="../img/pyatov.png" alt="Pyatov">
+                @foreach($comments as $comment)
+                    <div class="item">
+                        <div class="user">
+                            <div class="image">
+                                <img src="../img/pyatov.png" alt="Pyatov">
+                            </div>
+                            <div class="name">
+                                <a href="./user.html">{{$comment->user->name}}</a>
+                            </div>
                         </div>
-                        <div class="name">
-                            <a href="./user.html">Андрій Пятов</a>
-                        </div>
-                    </div>
-                    <p>
-                        Curabitur sed augue laoreet metus luctus egestas. Donec id lacus euismod, ullamcorper justo porta, placerat enim. Suspendisse sit amet consequat nunc. Nulla vel pulvinar neque, in viverra turpis. Pellentesque nunc orci, dapibus id lobortis id, volutpat vitae arcu. Curabitur in ex ligula. Praesent eu elementum odio. Donec tincidunt quam sit amet malesuada elementum. Quisque posuere mattis elementum. Nulla facilisi. Ut lacinia arcu tortor, a fringilla lectus finibus ac. Vestibulum efficitur scelerisque orci, sed ullamcorper velit varius et. Cras vitae condimentum lacus.
-                    </p>
-                    <div class="date">
-                        13.04.2022, 5:44 PM
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="user">
-                        <div class="image">
-                            <img src="../img/sedan.png" alt="Sedan">
-                        </div>
-                        <div class="name">
-                            <a href="#">Влада Седан</a>
+                        <p>
+                            {{$comment->description}}
+                        </p>
+                        <div class="date">
+                            {{date("Y-m-d", strtotime($comment->created))}}
                         </div>
                     </div>
-                    <p>
-                        Curabitur sed augue laoreet metus luctus egestas. Donec id lacus euismod, ullamcorper justo porta, placerat enim. Suspendisse sit amet consequat nunc. Nulla vel pulvinar neque, in viverra turpis. Pellentesque nunc orci, dapibus id lobortis id, volutpat vitae arcu. Curabitur in ex ligula. Praesent eu elementum odio. Donec tincidunt quam sit amet malesuada elementum. Quisque posuere mattis elementum. Nulla facilisi. Ut lacinia arcu tortor, a fringilla lectus finibus ac. Vestibulum efficitur scelerisque orci, sed ullamcorper velit varius et. Cras vitae condimentum lacus.
-                    </p>
-                    <div class="date">
-                        21.03.2022, 10:44 AM
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
 

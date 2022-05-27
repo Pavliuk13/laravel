@@ -153,6 +153,38 @@ footer
         @media (max-width: 595px)
             font-size: 20px
 
+    .comments
+        display: grid
+        textarea
+            width: 90%
+            height: 200px
+            margin: 0 auto
+            border-radius: 5px
+            margin-bottom: 10px
+            background-color: $mainColor
+            border: 2px solid $secondColor
+            color: $textColor
+            font-weight: bold
+            padding: 10px
+            font-family: 'Inter', sans-serif
+            resize: none
+        button
+            width: 90%
+            height: 40px
+            margin: 0 auto
+            margin-bottom: 20px
+            background-color: $secondColor
+            border-radius: 5px
+            border: 2px solid $secondColor
+            color: $textColor
+            font-weight: bold
+            font-size: 16px
+            cursor: pointer
+            &:hover
+                background-color: $mainColor
+                transition: .2s ease
+                color: $secondColor
+
     .testimonials
         .item
             width: 90%

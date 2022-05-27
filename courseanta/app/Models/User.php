@@ -43,6 +43,10 @@ class User extends Authenticatable
         return $this->belongsToMany(Course::class, 'user_course');
     }
 
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
+
     /**
      * The attributes that should be cast.
      *
