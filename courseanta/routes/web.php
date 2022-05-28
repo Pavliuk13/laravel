@@ -9,6 +9,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
      * Home Routes
      */
     Route::get('/', 'HomeController@index')->name('home.index');
+    Route::post('/', 'MailController@sendMail')->name('mail.mail');
     Route::get('/about', 'HomeController@about')->name('home.about');
     Route::get('/courses', 'HomeController@courses')->name('home.courses');
     Route::get('/cart', 'HomeController@user_cart')->name('home.user_cart');

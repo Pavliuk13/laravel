@@ -124,30 +124,33 @@
 
         <div class="line"></div>
 
-        <div class="form">
-            <h2>Залишилися ще питання?</h2>
-            <div class="actions">
-                <div class="inputs">
-                    <div class="name">
-                        <input type="text" placeholder="ім'я">
+        <form method="post" action="{{ route('mail.mail') }}">
+            @csrf
+            <div class="form">
+                <h2>Залишилися ще питання?</h2>
+                <div class="actions">
+                    <div class="inputs">
+                        <div class="name">
+                            <input name="name" type="text" placeholder="ім'я">
+                        </div>
+                        <div class="name">
+                            <input name="surname" type="text" placeholder="прізвище">
+                        </div>
+                        <div class="name">
+                            <input name="email" type="text" placeholder="email">
+                        </div>
+                        <div class="button first">
+                            <button type="submit">ВІДПРАВИТИ</button>
+                        </div>
                     </div>
-                    <div class="name">
-                        <input type="text" placeholder="прізвище">
-                    </div>
-                    <div class="name">
-                        <input type="text" placeholder="email">
-                    </div>
-                    <div class="button first">
-                        <a href="#">ВІДПРАВИТИ</a>
-                    </div>
-                </div>
 
-                <textarea placeholder="Текстове поле"></textarea>
+                    <textarea name="text" placeholder="Текстове поле"></textarea>
 
-                <div class="button second">
-                    <a href="#">ВІДПРАВИТИ</a>
+                    <div class="button second">
+                        <button type="submit">ВІДПРАВИТИ</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 @endsection
