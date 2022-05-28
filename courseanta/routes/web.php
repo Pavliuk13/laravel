@@ -5,19 +5,26 @@ use \Illuminate\Support\Facades\Auth;
 
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
-    /**
-     * Home Routes
-     */
+    //home routes
     Route::get('/', 'HomeController@index')->name('home.index');
-    Route::post('/', 'MailController@sendMail')->name('mail.mail');
     Route::get('/about', 'HomeController@about')->name('home.about');
     Route::get('/courses', 'HomeController@courses')->name('home.courses');
-    Route::get('/cart', 'HomeController@user_cart')->name('home.user_cart');
-    Route::get('/private', 'HomeController@private')->name('home.private');
-    Route::post('/private', 'HomeController@update')->name('home.update');
-    Route::get('/course/{id}', 'HomeController@course')->name('home.course');
-    Route::post('/course/{id}', 'HomeController@cart')->name('home.cart');
-    Route::post('/course/{id}/comment', 'HomeController@comment')->name('home.comment');
+
+    //mail
+    Route::post('/', 'MailController@sendMail')->name('mail.mail');
+
+    //private page
+    Route::get('/private', 'UserPageController@private')->name('private');
+    Route::post('/private', 'UserPageController@update')->name('update');
+    Route::get('/cart', 'UserPageController@user_cart')->name('user_cart');
+
+    //course page
+    Route::get('/course/{id}', 'CourseController@course')->name('course');
+    Route::post('/course/{id}', 'CourseController@add_to_cart')->name('cart');
+
+    //comments
+    Route::post('/course/{id}/comment', 'CommentsController@comment')->name('comment');
+    Route::post('/course/{id}/comment/delete', 'CommentsController@delete_comment')->name('delete_comment');
 
     Route::group(['middleware' => ['guest']], function() {
         /**

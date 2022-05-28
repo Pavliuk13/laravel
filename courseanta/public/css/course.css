@@ -492,6 +492,21 @@ footer .logos {
   transition: 0.2s ease;
   color: #D423F1;
 }
+.course .testimonials .delete-button {
+  background-color: #1D1626;
+  border: 1px solid #D423F1;
+  padding: 5px;
+  margin-left: 10px;
+  color: #D423F1;
+  font-weight: bold;
+  cursor: pointer;
+}
+.course .testimonials .delete-button:hover {
+  border: 1px solid red;
+  color: red;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
 .course .testimonials .item {
   width: 90%;
   border: 2px solid #D423F1;

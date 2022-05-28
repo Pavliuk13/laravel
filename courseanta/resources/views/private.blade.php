@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-    <form method="post" action="{{ route('home.update') }}" enctype="multipart/form-data">
+    <form method="post" action="{{ route('update') }}" enctype="multipart/form-data">
         @csrf
         <div class="wrapper">
             <div class="logo">

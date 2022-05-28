@@ -17,7 +17,7 @@
                         Категорія: {{$course->category->name}}
                     </div>
                     <div class="date">
-                        Дата виходу: 10.01.2022
+                        Дата виходу: {{date("Y-m-d", strtotime($course->date_creation))}}
                     </div>
                 </div>
                 <div class="price">
@@ -29,7 +29,7 @@
                     <div class="image">
                         <img src="{{$course->image_path}}" alt="C#">
                     </div>
-                    <form method="post" action="{{ route('home.cart', $course->id) }}">
+                    <form method="post" action="{{ route('cart', $course->id) }}">
                         @csrf
                         <input type="text" name="id" hidden value="{{$course->id}}">
                         <button type="submit">ДОДАТИ В КОШИК</button>
@@ -41,7 +41,7 @@
             <h2>ВІДГУКИ</h2>
 
             @auth
-            <form class="comments" method="post" action="{{ route('home.comment', $course->id) }}">
+            <form class="comments" method="post" action="{{ route('comment', $course->id) }}">
                 @csrf
                 <input type="text" name="course_id" hidden value="{{$course->id}}">
                 <textarea name="description" placeholder="Напишіть відгук..."></textarea>
@@ -51,22 +51,30 @@
 
             <div class="testimonials">
                 @foreach($comments as $comment)
-                    <div class="item">
-                        <div class="user">
-                            <div class="image">
-                                <img src="../img/{{$comment->user->image_path}}" alt="Pyatov">
+                    <form method="post" action="{{ route('delete_comment', $course->id) }}">
+                        @csrf
+                        <input hidden value="{{$comment->id}}" name="comment_id">
+                        <input hidden value="{{$course->id}}" name="course_id">
+                        <div class="item">
+                            <div class="user">
+                                <div class="image">
+                                    <img src="../img/{{$comment->user->image_path}}" alt="logo">
+                                </div>
+                                <div class="name">
+                                    <a href="./user.html">{{$comment->user->name}}</a>
+                                    @if($comment->user->id === auth()->id())
+                                        <button class="delete-button" type="submit">Видалити коментар</button>
+                                    @endif
+                                </div>
                             </div>
-                            <div class="name">
-                                <a href="./user.html">{{$comment->user->name}}</a>
+                            <p>
+                                {{$comment->description}}
+                            </p>
+                            <div class="date">
+                                {{date("Y-m-d", strtotime($comment->created))}}
                             </div>
                         </div>
-                        <p>
-                            {{$comment->description}}
-                        </p>
-                        <div class="date">
-                            {{date("Y-m-d", strtotime($comment->created))}}
-                        </div>
-                    </div>
+                    </form>
                 @endforeach
             </div>
         </div>
