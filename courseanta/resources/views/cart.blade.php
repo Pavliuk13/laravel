@@ -7,7 +7,7 @@
 
 @section('content')
     <div class="container-d">
-        <h1>ВАШІ КУРСИ</h1>
+        <h1>ПРИДБАНІ КУРСИ</h1>
         <div class="courses">
             @foreach($courses as $el)
                 <div class="item">

@@ -29,12 +29,21 @@
                     <div class="image">
                         <img src="{{$course->image_path}}" alt="C#">
                     </div>
-                    <form method="post" action="{{ route('cart', $course->id) }}">
-                        @csrf
-                        <input type="text" name="id" hidden value="{{$course->id}}">
-                        <button type="submit">ДОДАТИ В КОШИК</button>
-                        <button><a href="/courses">НАЗАД ДО КУРСІВ</a></button>
-                    </form>
+                    @if($exist_in_cart)
+                        <form method="post" action="{{ route('remove_cart', $course->id) }}">
+                            @csrf
+                            <input type="text" name="id" hidden value="{{$course->id}}">
+                            <button type="submit">ВИДАЛИТИ З КОШИКА</button>
+                            <button><a href="/courses">НАЗАД ДО КУРСІВ</a></button>
+                        </form>
+                    @else
+                        <form method="post" action="{{ route('cart', $course->id) }}">
+                            @csrf
+                            <input type="text" name="id" hidden value="{{$course->id}}">
+                            <button type="submit">ДОДАТИ В КОШИК</button>
+                            <button><a href="/courses">НАЗАД ДО КУРСІВ</a></button>
+                        </form>
+                    @endif
                 </div>
                 <p>{{$course->description}}</p>
             </div>

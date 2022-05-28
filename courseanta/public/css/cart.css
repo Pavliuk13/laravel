@@ -4,7 +4,7 @@
 }
 
 html, body {
-  height: 100%;
+  min-height: 100%;
 }
 
 @media (max-width: 768px) {
@@ -342,6 +342,7 @@ footer .logos {
   cursor: pointer;
 }
 .container-d .courses {
+  min-height: 500px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto auto auto;

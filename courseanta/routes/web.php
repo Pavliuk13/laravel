@@ -21,6 +21,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     //course page
     Route::get('/course/{id}', 'CourseController@course')->name('course');
     Route::post('/course/{id}', 'CourseController@add_to_cart')->name('cart');
+    Route::post('/course/{id}/delete', 'CourseController@remove_from_cart')->name('remove_cart');
 
     //comments
     Route::post('/course/{id}/comment', 'CommentsController@comment')->name('comment');

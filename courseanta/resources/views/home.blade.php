@@ -93,7 +93,7 @@
                         <img src="/img/online.png" alt="online">
                     </div>
                     <h1>онлайн</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>всі заняття проводяться в онлайн режимі</p>
                 </div>
                 <div class="element">
                     <div class="image">
@@ -101,7 +101,7 @@
                     </div>
 
                     <h1>теорія</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>достатня кількість теорії, зрозумілої будь-кому</p>
                 </div>
                 <div class="element">
                     <div class="image">
@@ -109,7 +109,7 @@
                     </div>
 
                     <h1>практика</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>велика кількість практичних занять для повноцінного засвоєння матеріалу</p>
                 </div>
                 <div class="element">
                     <div class="image">
@@ -117,7 +117,7 @@
                     </div>
 
                     <h1>проект</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>фінальний проект, який ви зможете добавити собі у портфоліо</p>
                 </div>
             </div>
         </div>
